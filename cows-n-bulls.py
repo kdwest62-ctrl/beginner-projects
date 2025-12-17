@@ -1,6 +1,7 @@
 import random
 
 rand_num = str(random.randint(1000, 9999))
+attempt = 0
 
 while True:
     bulls = 0
@@ -18,4 +19,5 @@ while True:
                     cows += 1
             else:
                 continue
-        print(f"Cows: {cows}, Bulls: {bulls}")
+        attempt += 1
+        print(f"Cows: {cows}, Bulls: {bulls}, Attempts: {attempt}")
