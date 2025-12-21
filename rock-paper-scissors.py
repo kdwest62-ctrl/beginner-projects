@@ -2,8 +2,9 @@ import random
 
 cpu_score = 0
 player_score = 0
+max_point = int(input("Enter max points to win: "))
 
-while player_score != 5 and cpu_score != 5:
+while player_score != max_point and cpu_score != max_point:
     player = input("Rock, paper, or scissors? (r/p/s): ")
     cpu = random.choice(['r', 'p', 's'])
     if player == 'r' and cpu == 's':
@@ -23,17 +24,17 @@ while player_score != 5 and cpu_score != 5:
         print(f"Scores: Player = {player_score}, CPU = {cpu_score}")
     elif player == 'r' and cpu == 'p':
         print(f"You: {player} | CPU: {cpu}")
-        print("You lose")
+        print("CPU wins")
         cpu_score += 1
         print(f"Scores: Player = {player_score}, CPU = {cpu_score}")
     elif player == 'p' and cpu == 's':
         print(f"You: {player} | CPU: {cpu}")
-        print("You lose")
+        print("CPU wins")
         cpu_score += 1
         print(f"Scores: Player = {player_score}, CPU = {cpu_score}")
     elif player == 's' and cpu == 'r':
         print(f"You: {player} | CPU: {cpu}")
-        print("You lose")
+        print("CPU wins")
         cpu_score += 1
         print(f"Scores: Player = {player_score}, CPU = {cpu_score}")
     elif player == 'r' and cpu == 'r':
@@ -53,7 +54,7 @@ while player_score != 5 and cpu_score != 5:
         print(f"Scores: Player = {player_score}, CPU = {cpu_score}")
 
 print("Game over!")
-if player_score == 5:
+if player_score == max_point:
     print(f"Player wins")
 else:
     print(f"CPU wins")
