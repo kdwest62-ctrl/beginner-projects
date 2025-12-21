@@ -55,6 +55,6 @@ while player_score != max_point and cpu_score != max_point:
 
 print("Game over!")
 if player_score == max_point:
-    print(f"Player wins")
+    print("Player wins")
 else:
-    print(f"CPU wins")
+    print("CPU wins")
