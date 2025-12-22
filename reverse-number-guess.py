@@ -9,11 +9,13 @@ while True:
     if choice == "ok":
         break
     elif choice == "h":
-        num += 1
+        increment = random.randint(1, 2)
+        num += increment
         attempt += 1
     elif choice == "l":
-        num -= 1
+        increment = random.randint(1, 2)
+        num -= increment
         attempt += 1
     else:
-        print("Please answer the question correctly")
+        print("Please answer correctly")
 print(f"I guessed your number in {attempt} attempts")
