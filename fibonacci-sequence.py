@@ -3,9 +3,9 @@ sequence = int(input("Input sequence: "))
 if sequence <= 0:
     print("Invalid input")
 elif sequence == 1:
-    print(f"{fibonacci[0]}")
+    print("[0]")
 elif sequence == 2:
-    print(f"{fibonacci}")
+    print(fibonacci)
 else:
     while len(fibonacci) != sequence:
         num = fibonacci[-1] + fibonacci[-2]
