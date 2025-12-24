@@ -1,8 +1,11 @@
 import random
 
-num = random.randint(1, 5)
+min_num = int(input("Input minimum number: "))
+max_num = int(input("Input maximum number: "))
+num = random.randint(min_num, max_num)
 attempt = 1
-print("Think of a number from 1 to 5\nLet's see how many attempts I can guess it")
+print(f"Think of a number from {min_num} to {max_num}")
+print("Let's see how many attempts I can guess it")
 while True:
     print(num)
     choice = input("Higher, lower, or OK? (h/l/ok): ")
