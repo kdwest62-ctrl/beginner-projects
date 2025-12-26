@@ -4,7 +4,7 @@ while True:
     decide = input("Choose option: ")
     if decide == '1':
         filename = input("Enter filename: ")
-        with open(filename, 'x') as file:
+        with open(filename, 'w') as file:
             pass
         print(f"{filename} successfully created")
     elif decide == '2':
