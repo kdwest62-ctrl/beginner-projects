@@ -33,5 +33,5 @@ while True:
             else:
                 continue
         print(f"Cows: {cows}, Bulls: {bulls}")
-    if incorrect == 2:
+    if incorrect == 5:
         print(f"Hint: first digit = {rand_dict[0]}")
