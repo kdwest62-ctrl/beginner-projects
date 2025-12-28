@@ -11,6 +11,7 @@ rand_num = "".join(rand_list)
 rand_dict = dict(enumerate(rand_num))
 
 attempt = 0
+incorrect = 0
 while True:
     bulls = 0
     cows = 0
@@ -22,6 +23,7 @@ while True:
         break
     else:
         attempt += 1
+        incorrect += 1
         for key in guess_dict:
             if guess_dict[key] in rand_dict.values():
                 if guess_dict[key] == rand_dict[key]:
@@ -31,3 +33,5 @@ while True:
             else:
                 continue
         print(f"Cows: {cows}, Bulls: {bulls}")
+    if incorrect == 2:
+        print(f"Hint: first digit = {rand_dict[0]}")
