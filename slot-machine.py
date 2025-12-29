@@ -43,4 +43,4 @@ while True:
             user_decide = input("Do you want to play again? (y/n): ")
             if user_decide == "n":
                 break
-print("Thank you for playing")
+print(f"Thank you for playing. You are going home with ${current_bal}")
