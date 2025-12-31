@@ -1,35 +1,39 @@
+def currency_converter(amt, src, tgt):
+    result = src[tgt] * amt
+    return result
+
+php = {'USD': 0.017, 'EURO': 0.015}
+usd = {'PHP': 58.69, 'EURO': 0.85}
+euro = {'PHP': 68.78, 'USD': 1.17}
+
 amount = int(input("Enter amount: "))
-print("Currencies: php, usd, euro")
+print("Source currencies: php, usd, euro")
 source = input("Source currency: ")
-if source == 'php':
-    target = input("Target currency: ")
-    if target == 'usd':
-        result = amount * 0.017
-        print(f"{amount} Php is equals to {result} USD")
-    elif target == 'euro':
-        result = amount * 0.015
-        print(f"{amount} Php is equals to {result} Euro")
+print("Target currencies: PHP, USD, EURO")
+count = input("Number of target currencies: ")
+if count == '1':
+    target = input("Target currency 1: ")
+    if source == 'php':
+        print(f"{amount} {source} = {currency_converter(amount, php, target)} {target}")
+    elif source == 'usd':
+        print(f"{amount} {source} = {currency_converter(amount, usd, target)} {target}")
+    elif source == 'euro':
+        print(f"{amount} {source} = {currency_converter(amount, euro, target)} {target}")
     else:
-        print("Invalid target currency")
-elif source == 'usd':
-    target = input("Target currency: ")
-    if target == 'php':
-        result = amount * 58.69
-        print(f"{amount} USD is equals to {result} Php")
-    elif target == 'euro':
-        result = amount * 0.85
-        print(f"{amount} USD is equals to {result} Euro")
+        print("Invalid source currency")
+elif count == '2':
+    target1 = input("Target currency 1: ")
+    target2 = input("Target currency 2: ")
+    if source == 'php':
+        print(f"{amount} {source} = {currency_converter(amount, php, target1)} {target1}")
+        print(f"{amount} {source} = {currency_converter(amount, php, target2)} {target2}")
+    elif source == 'usd':
+        print(f"{amount} {source} = {currency_converter(amount, usd, target1)} {target1}")
+        print(f"{amount} {source} = {currency_converter(amount, usd, target2)} {target2}")
+    elif source == 'euro':
+        print(f"{amount} {source} = {currency_converter(amount, euro, target1)} {target1}")
+        print(f"{amount} {source} = {currency_converter(amount, euro, target2)} {target2}")
     else:
-        print("Invalid target currency")
-elif source == 'euro':
-    target = input("Target currency: ")
-    if target == 'php':
-        result = amount * 68.78
-        print(f"{amount} Euro is equals to {result} Php")
-    elif target == 'usd':
-        result = amount * 1.17
-        print(f"{amount} Euro is equals to {result} USD")
-    else:
-        print("Invalid target currency")
+        print("Invalid source currency")
 else:
-    print("Invalid source currency")
+    print("Only 2 target currencies are allowed")
