@@ -6,13 +6,13 @@ php = {'USD': 0.017, 'EURO': 0.015}
 usd = {'PHP': 58.69, 'EURO': 0.85}
 euro = {'PHP': 68.78, 'USD': 1.17}
 
-amount = int(input("Enter amount: "))
-print("Source currencies: php, usd, euro")
+print("[php, usd, euro]")
 source = input("Source currency: ")
-print("Target currencies: PHP, USD, EURO")
-count = input("Number of target currencies: ")
+amount = int(input("Enter amount: "))
+count = input("Number of target currencies (max=2): ")
+print("[PHP, USD, EURO]")
 if count == '1':
-    target = input("Target currency 1: ")
+    target = input("Target currency: ")
     if source == 'php':
         print(f"{amount} {source} = {currency_converter(amount, php, target)} {target}")
     elif source == 'usd':
