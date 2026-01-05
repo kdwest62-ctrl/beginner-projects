@@ -8,9 +8,12 @@ while True:
             pass
         print(f"{filename} successfully created")
     elif decide == '2':
-        filename = input("Enter filename: ")
-        with open(filename, 'r') as file:
-            print(file.read())
+        try:
+            filename = input("Enter filename: ")
+            with open(filename, 'r') as file:
+                print(file.read())
+        except FileNotFoundError:
+            print("File not found")
     elif decide == '3':
         filename = input("Enter filename: ")
         lines = int(input("Lines: "))
