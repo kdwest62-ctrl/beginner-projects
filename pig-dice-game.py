@@ -1,6 +1,6 @@
 import random
 
-max_points = int(input("Input maximum number of points to win: "))
+max_points = int(input("Input maximum points to win: "))
 
 player1 = 0
 player2 = 0
@@ -8,16 +8,32 @@ player2 = 0
 while True:
     turn1 = []
     while True:
+        print(turn1)
         print("Player 1")
         roll = input("Roll? (y/n): ")
         if roll == 'y' or roll == 'Y':
-            num = random.randint(1, 6)
+            num = random.randint(6, 6)
             if num == 1:
                 print(f"You rolled a {num}")
                 print("Score: 0")
                 turn1.clear()
                 player1 += sum(turn1)
                 break
+            elif num == 6:
+                if len(turn1) != 0:
+                    if turn1[0] == 6 or turn1[-1] == 6:
+                        print(f"You rolled a {num}")
+                        print("You rolled two 6's in a row")
+                        print("Score: 0")
+                        turn1.clear()
+                        player1 += sum(turn1)
+                        break
+                    else:
+                        print(f"You rolled a {num}")
+                        turn1.append(num)
+                else:
+                    print(f"You rolled a {num}")
+                    turn1.append(num)
             else:
                 print(f"You rolled a {num}")
                 turn1.append(num)
@@ -40,16 +56,32 @@ while True:
 
     turn2 = []
     while True:
+        print(turn2)
         print("Player 2")
         roll = input("Roll? (y/n): ")
         if roll == 'y' or roll == 'Y':
-            num = random.randint(1, 6)
+            num = random.randint(6, 6)
             if num == 1:
                 print(f"You rolled a {num}")
                 print("Score: 0")
                 turn2.clear()
                 player2 += sum(turn2)
                 break
+            elif num == 6:
+                if len(turn2) != 0:
+                    if turn2[0] == 6 or turn2[-1] == 6:
+                        print(f"You rolled a {num}")
+                        print("You rolled two 6's in a row")
+                        print("Score: 0")
+                        turn2.clear()
+                        player2 += sum(turn1)
+                        break
+                    else:
+                        print(f"You rolled a {num}")
+                        turn2.append(num)
+                else:
+                    print(f"You rolled a {num}")
+                    turn2.append(num)
             else:
                 print(f"You rolled a {num}")
                 turn2.append(num)
