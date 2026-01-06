@@ -72,7 +72,7 @@ while True:
                         print("You rolled two 6's in a row")
                         print("Score: 0")
                         turn2.clear()
-                        player2 += sum(turn1)
+                        player2 += sum(turn2)
                         break
                     else:
                         print(f"You rolled a {num}")
