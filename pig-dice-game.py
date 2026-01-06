@@ -8,11 +8,10 @@ player2 = 0
 while True:
     turn1 = []
     while True:
-        print(turn1)
         print("Player 1")
         roll = input("Roll? (y/n): ")
         if roll == 'y' or roll == 'Y':
-            num = random.randint(6, 6)
+            num = random.randint(1, 6)
             if num == 1:
                 print(f"You rolled a {num}")
                 print("Score: 0")
@@ -21,7 +20,7 @@ while True:
                 break
             elif num == 6:
                 if len(turn1) != 0:
-                    if turn1[0] == 6 or turn1[-1] == 6:
+                    if turn1[-1] == 6:
                         print(f"You rolled a {num}")
                         print("You rolled two 6's in a row")
                         print("Score: 0")
@@ -56,11 +55,10 @@ while True:
 
     turn2 = []
     while True:
-        print(turn2)
         print("Player 2")
         roll = input("Roll? (y/n): ")
         if roll == 'y' or roll == 'Y':
-            num = random.randint(6, 6)
+            num = random.randint(1, 6)
             if num == 1:
                 print(f"You rolled a {num}")
                 print("Score: 0")
@@ -69,7 +67,7 @@ while True:
                 break
             elif num == 6:
                 if len(turn2) != 0:
-                    if turn2[0] == 6 or turn2[-1] == 6:
+                    if turn2[-1] == 6:
                         print(f"You rolled a {num}")
                         print("You rolled two 6's in a row")
                         print("Score: 0")
