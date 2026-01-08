@@ -19,7 +19,7 @@ else:
 values = []
 count = 0
 while count != len(keys):
-    values.append('♦')
+    values.append('_')
     count += 1
 word_to_guess = dict(zip(keys, values))
 
