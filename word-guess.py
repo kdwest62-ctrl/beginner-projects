@@ -1,100 +1,38 @@
-word = "python"
+keys = []
+words = ['list', 'tuple', 'string']
+choice = input("Select word (1/2/3): ")
+if choice == '1':
+    word = words[0]
+    for letter in word:
+        keys.append(letter)
+elif choice == '2':
+    word = words[1]
+    for letter in word:
+        keys.append(letter)
+elif choice =='3':
+    word = words[2]
+    for letter in word:
+        keys.append(letter)
+else:
+    print("Wrong choice")
 
-print("_ _ _ _ _ _")
+values = []
+count = 0
+while count != len(keys):
+    values.append('♦')
+    count += 1
+word_to_guess = dict(zip(keys, values))
 
-while True:
-    letter = input("Enter a letter: ")
-    if letter == "p":
-        print("Good guess")
-        print("p _ _ _ _ _")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
-    elif letter == "y":
-        print("Good guess")
-        print("_ y _ _ _ _")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
-    elif letter == "t":
-        print("Good guess")
-        print("_ _ t _ _ _")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
-    elif letter == "h":
-        print("Good guess")
-        print("_ _ _ _h _ _")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
-    elif letter == "o":
-        print("Good guess")
-        print("_ _ _ _ o _")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
-    elif letter == "n":
-        print("Good guess")
-        print("_ _ _ _ _ n")
-        decision = input("Guess the word (y/n): ")
-        if decision == "y":
-            guess_word = input("Word: ")
-            if guess_word == word:
-                break
-            else:
-                print("Wrong word")
-        elif decision == "n":
-            continue
-        else:
-            print("Please input a valid answer")
-
+score = 0
+while score != len(word_to_guess):
+    print(list(word_to_guess.values()))
+    guess = input("Guess a letter: ")
+    if guess in word_to_guess.keys():
+        print("Correct guess")
+        score += 1
+        update = {guess: guess}
+        word_to_guess.update(update)
     else:
         print("Wrong guess")
-
-print("Congratulations! You have guessed the word")
+print(list(word_to_guess.values()))
+print("Well done! You have guessed the word")
