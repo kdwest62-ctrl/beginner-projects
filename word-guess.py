@@ -14,25 +14,26 @@ elif choice =='3':
     for letter in word:
         keys.append(letter)
 else:
-    print("Wrong choice")
+    print("Invalid input")
 
-values = []
-count = 0
-while count != len(keys):
-    values.append('_')
-    count += 1
-word_to_guess = dict(zip(keys, values))
+if len(keys) != 0:
+    values = []
+    count = 0
+    while count != len(keys):
+        values.append('_')
+        count += 1
+    word_to_guess = dict(zip(keys, values))
 
-score = 0
-while score != len(word_to_guess):
+    score = 0
+    while score != len(word_to_guess):
+        print(list(word_to_guess.values()))
+        guess = input("Guess a letter: ")
+        if guess in word_to_guess.keys():
+            print("Correct guess")
+            score += 1
+            update = {guess: guess}
+            word_to_guess.update(update)
+        else:
+            print("Wrong guess")
     print(list(word_to_guess.values()))
-    guess = input("Guess a letter: ")
-    if guess in word_to_guess.keys():
-        print("Correct guess")
-        score += 1
-        update = {guess: guess}
-        word_to_guess.update(update)
-    else:
-        print("Wrong guess")
-print(list(word_to_guess.values()))
-print("Well done! You have guessed the word")
+    print("Well done! You have guessed the word")
