@@ -1,16 +1,17 @@
 keys = []
-words = ['list', 'tuple', 'string']
-choice = input("Select word (1/2/3): ")
+words = {'Easy': 'set', 'Medium': 'tuple', 'Hard': 'module'}
+print("1. Easy, 2. Medium, 3. Hard")
+choice = input("Select difficulty: ")
 if choice == '1':
-    word = words[0]
+    word = words['Easy']
     for letter in word:
         keys.append(letter)
 elif choice == '2':
-    word = words[1]
+    word = words['Medium']
     for letter in word:
         keys.append(letter)
 elif choice =='3':
-    word = words[2]
+    word = words['Hard']
     for letter in word:
         keys.append(letter)
 else:
