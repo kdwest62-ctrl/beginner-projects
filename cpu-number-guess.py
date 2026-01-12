@@ -1,29 +1,41 @@
 import random
 
-min_num = int(input("Input minimum number: "))
-max_num = int(input("Input maximum number: "))
-num = random.randint(min_num, max_num)
+def random_num(start, stop, avoid):
+    num_list = []
+    for element in range(start, stop + 1):
+        num_list.append(element)
+    for item in num_list:
+        if item in avoid:
+            num_list.remove(item)
+    num = random.choice(num_list)
+    return num
 
-limit = int(input("Input limit (attempts): "))
-attempt = 1
+cpu_nums = []
+avoid_nums = []
+min_num = int(input("Minimum number: "))
+max_num = int(input("Maximum number: "))
 print(f"Think of a number from {min_num} to {max_num}")
-print(f"Let's see I can guess it in {limit} attempts")
+player_num = random.randint(min_num, max_num)
+cpu_nums.append(player_num)
+
+limit = int(input("Limit (attempts): "))
+attempt = 0
 while attempt != limit:
-    print(num)
-    choice = input("Higher, lower, or OK? (h/l/ok): ")
-    if choice == "ok":
+    cpu_guess = cpu_nums[-1]
+    print(cpu_guess)
+    choice = input("Is this your number? (y/n): ")
+    if choice == "y":
+        attempt += 1
         break
-    elif choice == "h":
-        increment = random.randint(1, 2)
-        num += increment
+    elif choice == "n":
         attempt += 1
-    elif choice == "l":
-        increment = random.randint(1, 2)
-        num -= increment
-        attempt += 1
+        avoid_nums.append(cpu_guess)
+        cpu_nums.append(random_num(min_num, max_num, avoid_nums))
     else:
-        print("Please answer correctly")
+        attempt += 1
+        print("Invalid answer")
+
 if attempt == limit:
-    print("Human wins")
+    print("You win")
 else:
     print("CPU wins")
