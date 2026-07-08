@@ -9,4 +9,7 @@ class Calculator:
   def multiply(self):
     return self.num1 * self.num2
   def divide(self):
-    return self.num1 / self.num2
+    if self.num2 == 0:
+      print('Cannot divide by zero')
+    else:
+      return self.num1 / self.num2
