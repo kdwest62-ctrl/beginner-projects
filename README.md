@@ -1,14 +1,14 @@
 # beginner-projects
-Beginner-level Python projects
+Python projects for beginners
 
-# Environment
+## Environment
 PyCharm, or any Python IDE
 
-# Libraries
+## Libraries
 Built-in: random, math
 
-# License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-# Contact
+## Contact
 If you've got any questions, comments, or suggestions about the project, feel free to send me an email: kdwest62@gmail.com.
